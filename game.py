@@ -9,8 +9,8 @@ player_name = ""
 player_health = 100
 player_money = 50
 player_species = "Human"
-player_weapons = []
-player_items = []
+player_weapons = ['Sword']
+player_items = [4]
 
 ####################################
 #            Game Start!           #
@@ -53,3 +53,21 @@ elif (decision == "2"):
     print("Your items now: ")
     print(player_items)
 #            ---section end---           #
+
+# Section Author: Yanina
+print("The Kanbalese police stop you and try to collect taxes from you! What do you do!")
+print("1. Fight the police")
+print("2. Just pay your taxes")
+decision = ""
+while(decision == ""):
+    decision = input("Pick a number")
+    if  (decision == "1"):
+        print("You got arrested! Game over!")
+        exit()
+    elif (decision == "2"):
+        print("You lost all your money")
+        player_money = player_money * 0.8
+        print("The money you have left is:")
+        print(str(player_money))
+    else:
+        print("Please enter 1 or 2")        
