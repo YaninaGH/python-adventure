@@ -8,13 +8,13 @@ pipeline {
                     touch importantfile2
                     touch importantfile3
                 """
-            } //steps
+            } //steps    
         } //stage
         stage("Run helloworld") {
             steps {
                 sh """
                     python helloworld.py
-                """   
+                """
             } //steps
         } //stage
         stage("Run conditionals.py") {
@@ -25,5 +25,14 @@ pipeline {
             } //steps
         } //stage
     } //stages
+    post {
+        always {
+            sh """
+                rm -f importantfile1
+                rm -f importantfile2
+                rm -f importantfile3
+            """
+        }
+    }
 } //pipeline
     
